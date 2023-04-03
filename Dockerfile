@@ -1,6 +1,6 @@
 FROM golang:1.18.10-bullseye as builder
 
-ARG coredns_version=1.9.3
+ARG coredns_version=1.10.1
 ARG plugin_name=kubenodes
 ARG plugin_repo=github.com/infobloxopen/kubenodes
 
