@@ -10,6 +10,7 @@ WORKDIR $GOPATH/pkg/mod/github.com/coredns/coredns@v${coredns_version}
 RUN go mod download
 
 RUN sed -i "/kubernetes/i ${plugin_name}:${plugin_repo}" plugin.cfg && \
+    echo "kubeapi:github.com/coredns/kubeapi" >> plugin.cfg && \
     go get ${plugin_repo}
 
 RUN make coredns && \
