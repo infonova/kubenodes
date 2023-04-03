@@ -21,7 +21,7 @@ pull-image:
 	done
 
 test-image:
-	docker run -it --rm ${TEST_IMAGE} -plugins | grep kubenodes
+	docker run --rm ${TEST_IMAGE} -plugins | grep kubenodes
 
 RELEASE_IMAGE = ${IMAGE_NAME}:$(subst refs/tags/,,${GITHUB_REF})
 promote-image:
